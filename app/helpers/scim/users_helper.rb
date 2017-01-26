@@ -1,0 +1,2 @@
+module Scim::UsersHelper
+end

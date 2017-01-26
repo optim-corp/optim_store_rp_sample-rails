@@ -1,0 +1,2 @@
+module Tenants::SessionsHelper
+end

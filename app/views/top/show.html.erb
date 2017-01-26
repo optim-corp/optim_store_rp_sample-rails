@@ -1,0 +1,14 @@
+<% if flash[:error] %>
+  <p style="color:red"><%= flash[:error] %></p>
+<% end %>
+<% if authenticated? %>
+  <p>Hello, User#<%= current_user.identifier %> on Tenant#<%= current_user.contract.identifier %>.</p>
+  <p><%= link_to 'Logout', session_path, method: :delete %></p>
+<% else %>
+  <dl>
+    <dt>Login to...</dt>
+    <% Contract.all.each do |contract| %>
+      <dd><%= link_to "Tenant##{contract.identifier}", tenant_session_path(contract.identifier) %></dd>
+    <% end %>
+  </dl>
+<% end %>

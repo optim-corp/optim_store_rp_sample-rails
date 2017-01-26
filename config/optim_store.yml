@@ -1,0 +1,15 @@
+development: &development
+  store_url:
+  contract_jwks_url:
+  client_registration_endpoint:
+  authorization_endpoint:
+  token_endpoint:
+
+test:
+  <<: *development
+
+staging:
+  <<: *development
+
+production:
+  <<: *development
